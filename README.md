@@ -1,4 +1,4 @@
-# Industry Safety and Monitoring System (IoT Project)
+# Industry Safety and Monitoring System                                       ![Project Poster](poster.png)
 
 ## Project Description
 This project is an IoT-based Industry Safety and Monitoring System designed to monitor industrial environments and ensure worker safety.
