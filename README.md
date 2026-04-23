@@ -1,28 +1,45 @@
-# Industry Safety and Monitoring System 
-![Project Poster](poster.png) 
+# 🚧 Industry Safety and Monitoring System (IoT)
 
-## Project Description
-This project is an IoT-based Industry Safety and Monitoring System designed to monitor industrial environments and ensure worker safety.
+## 📌 Project Description
+This project is an IoT-based Industry Safety and Monitoring System designed to monitor industrial environments and ensure worker safety in real-time.
 
-## Features
-- Real-time monitoring
-- Sensor-based safety alerts
-- IoT data transmission
-- Automatic warning system
 
-## Components Used
-- Raspberry Pi
-- Camera Module
-- Ultrasonic Sensor
-- Speaker
-- Battery
+## ⚙️ Features
+- 🔹 Real-time monitoring
+- 🔹 Hazard detection (gas, fire, temperature)
+- 🔹 Alert system for unsafe conditions
+- 🔹 IoT-based automation
 
-## Technology Used
+## 🖼️ Project Poster
+![Project Poster](iot.png)
+
+
+## 📁 Project Files
+- `iot code.txt` → Contains IoT system code
+- `Html.txt.txt` → Frontend / UI related code
+- `iot.png` → Project poster / image
+- `README.md` → Project documentation
+
+
+## 🛠️ Technologies Used
 - Python
-- IoT
+- IoT Sensors
 - Embedded Systems
+- Web Interface (HTML)
 
-## Author
-Kanaka V Y
-B.E. Artificial Intelligence and Machine Learning
-Don Bosco Institute of Technology Bengaluru
+
+## 🚀 How It Works
+1. Sensors collect environmental data  
+2. Data is processed using IoT system  
+3. Unsafe conditions are detected  
+4. Alerts are generated in real-time  
+
+
+## 📌 Future Improvements
+- Mobile app integration  
+- AI-based prediction system  
+- Cloud data storage  
+
+
+## 👨‍💻 Author
+Kanaka VY
