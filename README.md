@@ -11,7 +11,7 @@ This project is an IoT-based Industry Safety and Monitoring System designed to m
 - 🔹 IoT-based automation
 
 ## 🖼️ Project Poster
-(![Project Poster](iot.png))
+![Project Poster](poster.jpg)
 
 
 ## 📁 Project Files
