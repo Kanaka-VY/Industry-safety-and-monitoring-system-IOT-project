@@ -47,7 +47,7 @@ This project is an IoT-based Industry Safety and Monitoring System designed to m
 ---
 
 ## 🌐 Live Demo (if deployed)
-[Click Here](https://your-username.github.io/repo-name/)
+(https://kanaka-vy.github.io/Industry-safety-and-monitoring-system-IOT-project/)
 
 ---
 
