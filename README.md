@@ -11,7 +11,7 @@ This project is an IoT-based Industry Safety and Monitoring System designed to m
 - 🔹 IoT-based automation
 
 ## 🖼️ Project Poster
-![Project Poster](./iot.png)
+![Project Poster]([./iot.png](https://github.com/Kanaka-VY/Industry-safety-and-monitoring-system-IOT-project/blob/main/iot%20.png))
 
 
 ## 📁 Project Files
