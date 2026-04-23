@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Sensor Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        .container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .sensor-box { flex: 1; padding: 15px; border: 2px solid #444; border-radius: 10px; background: white; width: 180px; }
+    </style>
+    <script>
+        const channelID = "2857962"; // Your ThingSpeak Channel ID
+        const apiKey = "MA8NWV43FT1FW9L3"; // Your ThingSpeak Read API Key
+
+
+        function fetchData() {
+            const url = `https://api.thingspeak.com/channels/${channelID}/feeds.json?api_key=${apiKey}&results=1`;
+
+
+            fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Fetched Data:", data); // Debugging
+
+
+                // Get the most recent entry from ThingSpeak
+                if (data.feeds && data.feeds.length > 0) {
+                    let latestEntry = data.feeds[0];
+
+
+                    document.getElementById("fire").innerText = latestEntry.field1 == "1" ? "🔥 Detected" : "✅ Safe";
+                    document.getElementById("smoke").innerText = latestEntry.field2;
+                    document.getElementById("gas").innerText = latestEntry.field3;
+                    document.getElementById("temperature").innerText = latestEntry.field4 + "°C";
+                    document.getElementById("humidity").innerText = latestEntry.field5 + "%";
+
+
+                    // ✅ Fix: Correct Conveyor Belt Status Logic
+                    let conveyorRunning = parseInt(latestEntry.field6, 10);
+
+
+                    console.log(`Conveyor Running: ${conveyorRunning}`);
+
+
+                    if (conveyorRunning === 1) {
+                        document.getElementById("conveyor").innerText = "🟢 Running";
+                    } else {
+                        document.getElementById("conveyor").innerText = "⏹ Stopped";
+                    }
+                } else {
+                    console.error("⚠️ No data received from ThingSpeak!");
+                }
+            })
+            .catch(error => console.error("❌ Error fetching data:", error));
+        }
+
+
+        setInterval(fetchData, 5000);
+        window.onload = fetchData;
+    </script>
+</head>
+<body>
+    <h1>ESP32 Sensor Dashboard (ThingSpeak)</h1>
+    <div class="container">
+        <div class="sensor-box"><h2>🔥 Fire</h2><p id="fire">Loading...</p></div>
+        <div class="sensor-box"><h2>💨 Smoke</h2><p id="smoke">Loading...</p></div>
+        <div class="sensor-box"><h2>☠️ Gas</h2><p id="gas">Loading...</p></div>
+        <div class="sensor-box"><h2>🌡 Temperature</h2><p id="temperature">Loading...</p></div>
+        <div class="sensor-box"><h2>💧 Humidity</h2><p id="humidity">Loading...</p></div>
+        <div class="sensor-box"><h2>🔄 Conveyor Belt</h2><p id="conveyor">Loading...</p></div>
+    </div>
+</body>
+</html>
